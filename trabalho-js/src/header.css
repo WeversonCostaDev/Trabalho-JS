@@ -39,18 +39,37 @@
     margin: 0 auto;
     max-width: 1300px;
     position: relative;
+
+    perspective: 1000px;
 }
-#banner-container img{
+#banner-container img#banner{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 1px solid red;
 }
 
 .logo{
     position: absolute;
-    width: fit-content;
-    top: 200px;
+    top: 180px;
     left: 0px;
     width: 450px;
+    width: fit-content;
+}
+.logo img{
+    width: 450px; 
+}
+
+.card{
+    width: 270px;
+    position: absolute;
+    right: 65px;
+    top: 200px;
+
+    transition: transform 0.2s ease;
+}
+
+
+
+.borda {
+    border: 1px solid yellow;
 }
