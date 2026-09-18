@@ -1,0 +1,17 @@
+/*Nesse arquivo, estilizamos os elementos que estão dentro do footer.*/
+
+#footer nav>ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+#footer nav>ul>li {
+    color: var(--branco);
+    font-size: 0.7rem;
+}
+
+#footer nav>ul>li:hover {
+    color: var(--destaque);
+    cursor: pointer;
+}

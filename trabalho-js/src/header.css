@@ -1,0 +1,17 @@
+/*Nesse arquivo, estilizamos os elementos que estão dentro do header.*/
+#header nav>ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+#header nav>ul>li {
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#header nav>ul>li:hover {
+    color: rgb(255, 206, 46);
+    cursor: pointer;
+}
