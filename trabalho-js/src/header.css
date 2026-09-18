@@ -1,17 +1,56 @@
 /*Nesse arquivo, estilizamos os elementos que estão dentro do header.*/
-#header nav>ul {
+#faixa-superior{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 1000;
+    
+}
+
+#faixa-superior nav>ul {
     display: flex;
     list-style: none;
     gap: 10px;
+
 }
 
-#header nav>ul>li {
+#faixa-superior nav>ul>li {
     color: #fff;
     font-weight: bold;
     font-size: 0.9rem;
 }
+#faixa-superior li>a{
+    letter-spacing: 1px;
+}
 
-#header nav>ul>li:hover {
+#faixa-superior nav>ul>li:hover {
     color: rgb(255, 206, 46);
     cursor: pointer;
+}
+
+#banner-container{
+    margin: 0 auto;
+    max-width: 1300px;
+    position: relative;
+}
+#banner-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid red;
+}
+
+.logo{
+    position: absolute;
+    width: fit-content;
+    top: 200px;
+    left: 0px;
+    width: 450px;
 }
