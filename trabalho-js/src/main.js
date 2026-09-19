@@ -22,3 +22,22 @@ card.addEventListener("mousemove", (event) =>{
 card.addEventListener("mouseleave", (event)=>{
     card.style.transform = "rotateX(0deg) rotateY(0deg)";
 })
+
+//carrossel
+
+const botao= document.getElementById("proximo");
+const cards = [
+    "/img/pikachu.png",
+    "/img/mewtwo.png",
+    "/img/mew.png",
+];
+let indice = 0;
+
+botao.addEventListener("click", () => {
+    indice++;
+    if(indice >= cards.length){
+        indice = 0;
+    }
+    const card2 = document.querySelector(".card");
+    card2.setAttribute("src", cards[indice]);
+});
