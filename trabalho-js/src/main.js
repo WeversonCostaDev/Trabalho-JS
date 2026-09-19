@@ -1,27 +1,32 @@
 const card = document.querySelector(".card");
 
-card.addEventListener("mousemove", (event) =>{
-    const rect = card.getBoundingClientRect();
-    //serve para pegar informações sobre o tamanho e a posição do elemento card na tela.
+card.addEventListener("mousemove", (event) => {
+    const cardPosition = card.getBoundingClientRect();
+    
+    const xViewpoint = event.clientX;
+    const yViewpoint = event.clientY;
 
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const xInside = xViewpoint - cardPosition.left;
+    const yInside = yViewpoint - cardPosition.top;
 
-    const centroX = rect.width/2;
-    const centroY = rect.height/2;
+    const xCenter = cardPosition.width / 2;
+    const yCenter = cardPosition.height / 2;
 
-    const distanciaX = x - centroX;
-    const distanciaY = y - centroY;
+    const xSide = - ((xInside - xCenter) / xCenter) * 10;
+    const ySide = ((yInside - yCenter) / yCenter) * 10;
 
-    const rotateX = - (distanciaY / centroY) * 10;
-    const rotateY = (distanciaX / centroX) * 10;
+    card.style.boxShadow = "10px 10px 20px rgba(0, 0, 0, 0.3)";
+    card.style.transform = `
+    scale(1.05)
+    rotateX(${ySide}deg)
+    rotateY(${xSide}deg)`;
 
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-});
-
-card.addEventListener("mouseleave", (event)=>{
-    card.style.transform = "rotateX(0deg) rotateY(0deg)";
 })
+
+card.addEventListener("mouseleave", () =>{
+    card.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
+})
+
 
 //carrossel
 
