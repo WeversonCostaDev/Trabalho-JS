@@ -17,6 +17,7 @@ card.addEventListener("mousemove", (event) => {
 
     card.style.boxShadow = "10px 10px 20px rgba(0, 0, 0, 0.3)";
     card.style.transform = `
+
     scale(1.05)
     rotateX(${ySide}deg)
     rotateY(${xSide}deg)`;
@@ -24,18 +25,32 @@ card.addEventListener("mousemove", (event) => {
 })
 
 card.addEventListener("mouseleave", () =>{
+    card.style.boxShadow = "none";
     card.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
 })
-
 
 //carrossel
 
 const botao= document.getElementById("proximo");
+
 const cards = [
-    "/img/pikachu.png",
-    "/img/mewtwo.png",
-    "/img/mew.png",
+    {
+        imagem: "/img/pikachu.png",
+        efeito: "pikachu",
+    },
+    {    
+        imagem: "/img/mewtwo.png",
+        efeito: "mewtwo",
+    },
+    {
+        imagem: "/img/mew.png",
+        efeito: "mew",
+    }
 ];
+
+const carta = document.querySelector(".card");
+const imagem = document.querySelector(".card img");
+
 let indice = 0;
 
 botao.addEventListener("click", () => {
@@ -43,6 +58,7 @@ botao.addEventListener("click", () => {
     if(indice >= cards.length){
         indice = 0;
     }
-    const card2 = document.querySelector(".card");
-    card2.setAttribute("src", cards[indice]);
+    imagem.setAttribute("src",cards[indice].imagem);
+    carta.className = "card "+cards[indice].efeito;
+
 });

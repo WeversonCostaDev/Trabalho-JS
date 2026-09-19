@@ -65,11 +65,33 @@
     right: 65px;
     top: 200px;
 
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease;
+}
+.card img {
+    width: 100%;
+    display: block;
 }
 
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
 
-
+.card.pikachu::after{
+    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+}
+.card.mewtwo::after{
+    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+}
+.card.mew::after{
+    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+}
 .borda {
     border: 1px solid yellow;
 }
