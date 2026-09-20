@@ -1,4 +1,9 @@
 /*Nesse arquivo, estilizamos os elementos que estão dentro do header.*/
+:root{
+    --x:1px;
+    --y:1px;
+}
+
 #faixa-superior{
     display: flex;
     justify-content: space-between;
@@ -64,34 +69,57 @@
     position: absolute;
     right: 65px;
     top: 200px;
-
     transition: transform 0.1s ease;
+    border-radius: 12px;
 }
 .card img {
     width: 100%;
     display: block;
 }
 
-.card::after {
-    content: "";
+.brilho {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
+    border-radius: inherit;
     pointer-events: none;
-    mix-blend-mode: screen;
+
+    background: radial-gradient(
+        circle at var(--x) var(--y),
+        rgba(255, 255, 255, 0.8),
+        transparent 40%
+    );
+    mix-blend-mode: color-dodge;
+    opacity: 0;
 }
 
-.card.pikachu::after{
-    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
-}
-.card.mewtwo::after{
-    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
-}
-.card.mew::after{
-    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
-}
 .borda {
     border: 1px solid yellow;
 }
+
+.carrossel-container{
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carrossel-container>button{
+    height: 100%;
+    width: 60px;
+    border: none;
+}
+.carrossel-container>button>img{
+    color: white;
+}
+
+.carrossel-container>button:hover{
+    background: linear-gradient(to right, gold, #fff, gold);
+}
+
+.titulo{
+    color: #fff;
+}
+

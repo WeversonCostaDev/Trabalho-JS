@@ -1,4 +1,5 @@
 const card = document.querySelector(".card");
+const brilho = document.querySelector(".brilho");
 
 card.addEventListener("mousemove", (event) => {
     const cardPosition = card.getBoundingClientRect();
@@ -16,17 +17,23 @@ card.addEventListener("mousemove", (event) => {
     const ySide = ((yInside - yCenter) / yCenter) * 10;
 
     card.style.boxShadow = "10px 10px 20px rgba(0, 0, 0, 0.3)";
-    card.style.transform = `
 
+    card.style.transform = `
     scale(1.05)
     rotateX(${ySide}deg)
     rotateY(${xSide}deg)`;
+
+    brilho.style.opacity = "1";
+    brilho.style.setProperty("--x", `${xInside}px`);
+    brilho.style.setProperty("--y", `${yInside}px`);
+;
 
 })
 
 card.addEventListener("mouseleave", () =>{
     card.style.boxShadow = "none";
     card.style.transform = `rotateX(${0}deg) rotateY(${0}deg)`;
+     brilho.style.opacity = "0";
 })
 
 //carrossel
@@ -34,18 +41,12 @@ card.addEventListener("mouseleave", () =>{
 const botao= document.getElementById("proximo");
 
 const cards = [
-    {
-        imagem: "/img/pikachu.png",
-        efeito: "pikachu",
-    },
-    {    
-        imagem: "/img/mewtwo.png",
-        efeito: "mewtwo",
-    },
-    {
-        imagem: "/img/mew.png",
-        efeito: "mew",
-    }
+    "/img/pikachu.png",
+   
+    "/img/mewtwo.png",
+    
+    "/img/mew.png",
+
 ];
 
 const carta = document.querySelector(".card");
@@ -58,7 +59,5 @@ botao.addEventListener("click", () => {
     if(indice >= cards.length){
         indice = 0;
     }
-    imagem.setAttribute("src",cards[indice].imagem);
-    carta.className = "card "+cards[indice].efeito;
-
+    imagem.setAttribute("src",cards[indice]);
 });
