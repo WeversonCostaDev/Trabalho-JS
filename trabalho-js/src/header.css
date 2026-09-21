@@ -41,36 +41,53 @@
 }
 
 #banner-container{
-    margin: 0 auto;
-    max-width: 1300px;
     position: relative;
-
-    perspective: 1000px;
 }
+
+#fundo-header {
+    position: relative;
+    max-width: 1300px;
+    height: 800px;
+
+    margin: 0 auto;
+    perspective: 1000px;
+    background-image: url("/img/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #banner-container img#banner{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.logo{
+#logo-30th{
     position: absolute;
     top: 180px;
     left: 0px;
     width: 450px;
     width: fit-content;
 }
-.logo img{
-    width: 450px; 
+#logo-30th img {
+    width: clamp(200px, 30vw, 450px);
+}
+
+@media(max-width: 980px){
+    #logo-30th{
+        position: static;
+    }
 }
 
 .card{
-    width: 270px;
+    width: clamp(200px, 30vw, 270px);
     position: absolute;
     right: 65px;
     top: 200px;
     transition: transform 0.1s ease;
     border-radius: 12px;
+    
 }
 .card img {
     width: 100%;
