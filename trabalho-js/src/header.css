@@ -48,7 +48,6 @@
     max-width: 1300px;
     height: 800px;
     margin: 0 auto;
-    perspective: 1000px;
     background-image: url("/img/banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -82,7 +81,16 @@
     width: clamp(200px, 30vw, 450px);
 }
 
+.card-container{
+    position: absolute;
+    right: 80px;
+    bottom: 150px;
 
+    display: flex;
+    flex-direction: column;
+    perspective: 1000px;
+    
+}
 
 .card{
     width: clamp(200px, 30vw, 270px);
@@ -114,12 +122,16 @@
     border: 1px solid yellow;
 }
 
-.carrossel-container{
+.carrossel-container {
     position: absolute;
     bottom: 0;
+    left: 0;
+
     height: 60px;
-    background-color: black;
     width: 100%;
+
+    background-color: black;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
