@@ -41,15 +41,23 @@ card.addEventListener("mouseleave", () =>{
 const botaoDireito= document.getElementById("proximo");
 const botaoEsquerdo= document.getElementById("anterior");
 const cards = [
-    "/img/pikachu.png",
-    "/img/mewtwo.png",
-    "/img/mew.png",
-
+    {
+        imagem:"/img/pikachu.png",
+        titulo:"Pikachu ex",
+    },
+    {
+        imagem:"/img/mewtwo.png",
+        titulo:"Mewtwo ex",
+    },
+    {
+    imagem:"/img/mew.png",
+    titulo:"Mew ex",
+    }
 ];
 
 const carta = document.querySelector(".card");
 const imagem = document.querySelector(".card img");
-
+const titulo = document.querySelector("div.carrossel-container h3")
 let indice = 0;
 
 botaoDireito.addEventListener("click", () => {
@@ -57,7 +65,8 @@ botaoDireito.addEventListener("click", () => {
     if(indice >= cards.length){
         indice = 0;
     }
-    imagem.setAttribute("src",cards[indice]);
+    imagem.setAttribute("src",cards[indice].imagem);
+    titulo.textContent = cards[indice].titulo
 });
 
 botaoEsquerdo.addEventListener("click", () =>{
@@ -65,5 +74,6 @@ botaoEsquerdo.addEventListener("click", () =>{
     if(indice<=0){
         indice = cards.length - 1;
     }
-    imagem.setAttribute("src", cards[indice]);
+    imagem.setAttribute("src",cards[indice].imagem);
+    titulo.textContent = cards[indice].titulo
 })
