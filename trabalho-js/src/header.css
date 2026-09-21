@@ -153,3 +153,14 @@
     color: #fff;
 }
 
+@media(max-width: 990px){
+    .card-container{
+        position: static;
+    }
+    .card{
+        width: 200px;
+    }
+    .titulo{
+        display: none;
+    }
+}
