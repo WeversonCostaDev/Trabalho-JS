@@ -2,9 +2,11 @@
     text-transform: uppercase;
     font-weight: 800;
     font-size: 3em;
+    display: block;
 }
-.destaques{
-    background: linear-gradient(
+
+.destaques-container{
+     background: linear-gradient(
     135deg,
     gold 0%,
     gold 20%,
@@ -12,47 +14,52 @@
     gold 80%,
     gold 100%
     );
-    padding: 50px 0px;;
     text-align: center;
-    position: relative;
-}
-.destaques>div.bloco-texto{
-    max-width: 600px;
-    position: relative;
-    left: 20%;
-}
-.booster{
-    width: 250px;
-    position: absolute;
-    transform: rotate(-15deg);
-    top: 150px;
-    right: 620px;
-
+    padding: 50px 0px;
 }
 
-.back-card{
-    position: absolute;
-    width: 200px;
-    border-radius: 15px;
-    transform: rotate(10deg);
-    top: 200px;
-    right: 350px;
+.destaques{
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
 }
+.destaques div.bloco-texto{
+    max-width: 700px;
+}
+
 
 .destaques h2{
     font-weight: 800;
     font-size: 2em;
     line-height: 1.2;
-    text-align: center;
     margin-bottom: 20px;
 }
 .destaques p{
-    text-align: center;
     font-size: 1.5em;
+    padding: 10px;
+}
+.destaques div.nota{
+    font-size: 0.7em;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .logo-pikachu{
     max-width: 200px;
     display: block;
     margin: 0 auto;
+}
+.back-card{
+    max-width: clamp(150px, 20vw, 200px);
+    border-radius: 15px;
+    transform: rotate(10deg);
+    width: 50%;
+}
+.booster{
+    max-width: clamp(150px, 20vw, 250px);
+    width: 50%;
+    transform: rotate(-15deg);
+    top: 150px;
 }

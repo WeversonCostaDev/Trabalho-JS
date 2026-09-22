@@ -4,42 +4,6 @@
     --y:1px;
 }
 
-#faixa-superior{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: black;
-    z-index: 1000;
-    
-}
-
-#faixa-superior nav>ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-
-}
-
-#faixa-superior nav>ul>li {
-    color: #fff;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-#faixa-superior li>a{
-    letter-spacing: 1px;
-}
-
-#faixa-superior nav>ul>li:hover {
-    color: rgb(255, 206, 46);
-    cursor: pointer;
-}
-
 #banner-container{
     position: relative;
     height: 100%;
@@ -83,7 +47,7 @@
 
 .card-container{
     position: absolute;
-    right: 300px;
+    right: 150px;
     bottom: 300px;
 
     display: flex;
@@ -150,7 +114,14 @@
 }
 
 
+.logo{
+    transition: transform 0.1s ease-out;
+}
 
+.logo:hover{
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in;
+}
 @media(max-width: 990px){
     .carrossel-container{
         height: 300px;
@@ -175,13 +146,4 @@
     justify-content: center;
 }
 
-}
-
-.logo{
-    transition: transform 0.1s ease-out;
-}
-
-.logo:hover{
-    transform: scale(1.1);
-    transition: transform 0.1s ease-in;
 }

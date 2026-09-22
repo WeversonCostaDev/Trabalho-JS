@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt/br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/src/base.css" />
+  <link rel="stylesheet" href="/src/faixa-superior.css">
+  <link rel="stylesheet" href="/src/adiciona-card.css">
+  <link rel="stylesheet" href="/src/footer.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trabalho-js</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <header id="header">
+      <div id=faixa-superior>
+        <a class="logo" href="index.html">
+          <picture>
+            <img src="/img/tcg-logo.png" alt="logo-de-pokémon-tcg" />
+          </picture>
+        </a>
+        <nav>
+          <ul>
+            <li><a>Adicionar Card</a></li>
+            <li><a>Cartas</a></li>
+            <li><a>Pokémons estampas ilustradas live</a></li>
+            <li><a>Como jogar</a></li>
+            <li><a>Novidades</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="faixa-meio">
+        <img id="esquerda" src="/img/cards-esquerda.png" alt="cards pokémons da lateral esquerda">
+            <h1>Cards Pokémon</h1>
+        <img id="direita" src="/img/cards-direita.png" alt="cards pokémons da lateral direita">
+        <div class="faixa-final">
+        </div>
+      </div>
+
+    </header>
+    <main id="main"> 
+      <div class="formulario-container">
+        <form action="">
+          <label for="nome">Nome
+            <input type="text" name="nome" id="nome" placeholder="Nome do card" required>
+          </label>
+          
+          <label for="tipo">Tipo
+            <input type="text" name="tipo" id="tipo" placeholder="Tipo do pokémon " required>
+          </label>
+          
+          <label for="numero">Número
+            <input type="text" name="numero" id="numero" placeholder="Número do pokemon" required>
+          </label>
+
+          <label for="raridade" >Raridade
+            <input type="text" name="raridade" id="raridade" placeholder="Raridade" required>
+          </label>
+
+          <button type="submit">Adicionar</button>
+        </form>
+      </div>
+    </main>
+    <footer id="footer">
+      <nav>
+        <ul>
+          <li><a>Suporte</a></li>
+          <li><a>Termos de Uso</a></li>
+          <li><a>Política de Privacidade</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </div>
+
+
+</body>
+
+</html>

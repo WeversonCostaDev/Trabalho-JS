@@ -1,0 +1,38 @@
+
+#faixa-superior{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    z-index: 1000;
+    
+}
+
+#faixa-superior nav>ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+
+}
+
+#faixa-superior nav>ul>li {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+#faixa-superior li>a{
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+}
+
+#faixa-superior nav>ul>li a:hover {
+    color: rgb(255, 206, 46);
+    cursor: pointer;
+}
+
