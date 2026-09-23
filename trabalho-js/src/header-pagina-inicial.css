@@ -113,15 +113,6 @@
     color: #fff;
 }
 
-
-.logo{
-    transition: transform 0.1s ease-out;
-}
-
-.logo:hover{
-    transform: scale(1.1);
-    transition: transform 0.1s ease-in;
-}
 @media(max-width: 990px){
     .carrossel-container{
         height: 300px;

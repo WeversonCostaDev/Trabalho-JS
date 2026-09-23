@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/src/faixa-superior.css">
   <link rel="stylesheet" href="/src/adiciona-card.css">
   <link rel="stylesheet" href="/src/footer.css" />
+  <link rel="stylesheet" href="/src/formulario.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>trabalho-js</title>
 </head>
@@ -41,28 +42,65 @@
       </div>
 
     </header>
-    <main id="main"> 
-      <div class="formulario-container">
-        <form action="">
-          <label for="nome">Nome
-            <input type="text" name="nome" id="nome" placeholder="Nome do card" required>
-          </label>
-          
-          <label for="tipo">Tipo
-            <input type="text" name="tipo" id="tipo" placeholder="Tipo do pokémon " required>
-          </label>
-          
-          <label for="numero">Número
-            <input type="text" name="numero" id="numero" placeholder="Número do pokemon" required>
-          </label>
+    <main id="main">
+      <section>
+        <div class="formulario-container">
+          <form action="" id="formulario">
+            <label for="nome">Nome
+              <input type="text" name="nome" id="nome" placeholder="Nome do card" required>
+            </label>
+            <label for="tipo">Tipo
+              <select name="tipo" id="tipo">
+                <option value="normal">Normal</option>
+                <option value="eletrico">Elétrico</option>
+                <option value="fogo">Fogo</option>
+                <option value="agua">Água</option>
+                <option value="planta">Planta</option>
+                <option value="gelo">Gelo</option>
+                <option value="lutador">Lutador</option>
+                <option value="veneno">Veneno</option>
+                <option value="terra">Terra</option>
+                <option value="rocha">Rocha</option>
+                <option value="inseto">Inseto</option>
+                <option value="fantasma">Fantasma</option>
+                <option value="psiquico">Psíquico</option>
+                <option value="dragao">Dragão</option>
+                <option value="fada">Fada</option>
+              </select> 
+            </label>
+            <label for="quantidade">Quantidade<br>
+              <input type="number" min="1" name="quantidade" id="quantidade" placeholder="Quantidade de unidades" required>
+            </label>
+            <label for="raridade">Raridade
+              <select name="raridade" id="raridade">
+                <option value="comum">Comum</option>
+                <option value="incomum">Incomum</option>
+                <option value="raro">Raro</option>
+                <option value="raro">duplamente raro</option>
+                <option value="super raro">Super raro</option>
+                <option value="imersivo">Imersivo</option>
+                <option value="ultra-raro">Ultra raro</option>
+              </select> 
+            </label>
+            <label for="imagem">Imagem
+              <input 
+                type="file"
+                name="imagem"
+                id="imagem"
+                accept=" .jpg, .jpeg, .png, .webp"
+                required
+                >
+            </label>
+            <button type="submit">Adicionar</button>
+          </form>
+        </div>
+      </section>
 
-          <label for="raridade" >Raridade
-            <input type="text" name="raridade" id="raridade" placeholder="Raridade" required>
-          </label>
+      <section>
+        <h2>Meus cards</h2>
+        <div id="lista"></div>
+      </section>
 
-          <button type="submit">Adicionar</button>
-        </form>
-      </div>
     </main>
     <footer id="footer">
       <nav>
@@ -73,7 +111,7 @@
         </ul>
       </nav>
     </footer>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/crud-pokemon.js"></script>
   </div>
 
 

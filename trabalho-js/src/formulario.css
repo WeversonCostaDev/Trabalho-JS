@@ -1,0 +1,67 @@
+.formulario-container {
+    margin: 50px;
+    display: flex;
+    width: 100%;
+}
+
+.formulario-container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 350px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    background-color: olive;
+    padding: 20px;
+    border: 5px solid gold;
+    border-radius: 15px;
+    box-shadow: 1px 5px 20px;
+
+    transition: transform 0.2s ease-in;
+}
+
+.formulario-container > form:hover {
+    transform: scale(1.1);
+}
+
+.formulario-container label {
+    color: #fff;
+}
+
+.formulario-container input,
+.formulario-container select{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.formulario-container input:not([type="file"]),
+.formulario-container select {
+    height: 30px;
+    padding: 2px 8px;
+    color: olive;
+}
+
+.formulario-container input::file-selector-button,
+.formulario-container button {
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    font-weight: bold;
+    color: olive;
+    cursor: pointer;
+}
+
+.formulario-container button {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.formulario-container input::file-selector-button:hover,
+.formulario-container button:hover {
+    transform: scale(1.1);
+}
