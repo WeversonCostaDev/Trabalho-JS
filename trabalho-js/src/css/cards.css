@@ -1,0 +1,41 @@
+#container-cards{
+    width: 100%;
+    background-color: #fff;
+    height: 800px;
+    padding: 20px 0;
+}
+#container-cards>div{
+    background-color: pink;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container-cards summary{
+    list-style: none;
+    background: black;
+    width: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: 3px solid transparent;
+
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(
+            135deg,
+            #b8860b,
+            #fff,
+            #ffd700,
+            #b8860b
+        ) border-box;
+}
+
+#container-cards h3{
+    text-transform: uppercase;
+    font-weight: 800;
+}
+

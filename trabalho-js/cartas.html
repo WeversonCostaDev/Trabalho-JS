@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt/br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/faixa-superior.css">
+  <link rel="stylesheet" href="/src/css/adiciona-card.css"> <!--Refatorar esse .css-->
+  <link rel="stylesheet" href="/src/css/footer.css"/>
+  <link rel="stylesheet" href="/src/css/cards.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trabalho-js</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <header id="header">
+      <div id=faixa-superior>
+        <a class="logo" href="index.html">
+          <picture>
+            <img src="/img/tcg-logo.png" alt="logo-de-pokémon-tcg" />
+          </picture>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="adiciona-card.html">Adicionar Card</a></li>
+            <li><a href="cartas.html">Cartas</a></li>
+            <li><a>Pokémons estampas ilustradas live</a></li>
+            <li><a>Como jogar</a></li>
+            <li><a>Novidades</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="faixa-meio">
+        <img id="esquerda" src="/img/cards-esquerda.png" alt="cards pokémons da lateral esquerda">
+            <h1>Cards Pokémon</h1>
+        <img id="direita" src="/img/cards-direita.png" alt="cards pokémons da lateral direita">
+        <div class="faixa-final">
+        </div>
+      </div>
+
+    </header>
+    <main id="main">
+      <section>
+        <div id="container-cards">
+            <div>
+            <details>
+              <summary><h3>Tipos<h3></summary>
+              <ul>
+                  <li><button type="button" value="normal">Normal</button></li>
+                  <li><button type="button" value="eletrico">Elétrico</button></li>
+                  <li><button type="button" value="fogo">Fogo</button></li>
+                  <li><button type="button">Água</button></li>
+                  <li><button type="button">Planta</button></li>
+                  <li><button type="button">Gelo</button></li>
+              </ul>
+            </details>
+            </div>
+        </div>
+      </section>
+
+    </main>
+    <footer id="footer">
+      <nav>
+        <ul>
+          <li><a>Suporte</a></li>
+          <li><a>Termos de Uso</a></li>
+          <li><a>Política de Privacidade</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <script type="module" src="/src/crud-pokemon.js"></script>
+  </div>
+
+
+</body>
+
+</html>

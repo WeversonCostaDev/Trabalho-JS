@@ -10,14 +10,14 @@
 
 .faixa-meio>img#esquerda{
     position: absolute;
-    left: -50px;
+    left: 0px;
     bottom: 0;
     max-width: 400px;
 }
 
 .faixa-meio>img#direita{
     position: absolute;
-    right: -50px;
+    right: 0px;
     bottom: 0;
     max-width: 400px;
 }
