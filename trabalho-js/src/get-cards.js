@@ -20,6 +20,9 @@ function exibirCards(pokemonsLista){
     pokemonsLista.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("card");
+
+        card.dataset.id = pokemon.id;
+
         card.innerHTML = `
         <img src=${pokemon.imagem} alt="${pokemon.nome}">
         <div class="acoes-card">
@@ -59,7 +62,7 @@ function aplicarEfeito(card) {
             rotateY(${xSide}deg)
         `;
 
-         card.style.setProperty("--x", `${xInside}px`);
+        card.style.setProperty("--x", `${xInside}px`);
         card.style.setProperty("--y", `${yInside}px`);
         card.style.setProperty("--brilho", "1");
 
@@ -84,14 +87,18 @@ function aplicarEfeito(card) {
 
     botaoEditar.addEventListener("click", (event) =>{
         event.stopPropagation(); //Vai evitar que o evento de click atinja o elementos de camadas abaixo, como o card.
-        const id = card.dataset.id;
-        console.log();
+        const id = Number(card.dataset.id);
+        
+        localStorage.setItem("idPokemonEditando", id);
+
+        window.location.href = "adiciona-card.html"; //Redireciona o usuário para essa página.
+
     });
 
     botaoExcluir.addEventListener("click", (event) => {
         event.stopPropagation();
 
-        const id = card.dataset.id;
+        
 
         console.log("Excluir:", id);
     });
