@@ -12,12 +12,30 @@
     justify-content: center;
     position: relative;
     z-index: 10;
+    gap: 20px;
 }
 
-#container-cards summary{
+#container-cards div.option a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+#container-cards div.option a:hover,#container-cards summary:hover{
+    color: #fff;
+
+}
+
+#container-cards div.option, #container-cards summary{
     list-style: none;
     background: black;
-    width: 100px;
+    max-width: 200px;
+    width: fit-content;
+    padding: 0 10px;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -30,10 +48,9 @@
     
 }
 
-#container-cards summary:hover{
+#container-cards div.option:hover, #container-cards summary:hover{
     background: linear-gradient(black) padding-box,
     linear-gradient(135deg, #b8860b, #fff, #dba10d, #b8860b) border-box;
-    color:#fff
 }
 
 #container-cards h3{
@@ -52,13 +69,13 @@
 }
 
 #area-cards{
-    background: palegoldenrod;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     perspective: 1000px;
-    border: 1px solid red;  
+    padding: 30px 0;
+    
 }
 
 .card{
@@ -86,4 +103,47 @@
 .card img {
     width: 100%;
     display: block;
+}
+
+#barra-pesquisa{
+    max-width: 400px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+#barra-pesquisa>input{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+#barra-pesquisa>button{
+    width: 40px;
+    margin: auto auto;
+    border: none;
+    background-color: inherit;
+}
+#barra-pesquisa>button>img{
+    width: 100%;
+}
+
+.acoes-card{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+}
+
+.card.selecionado .acoes-card{
+    opacity: 1;
+}
+
+.acoes-card button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

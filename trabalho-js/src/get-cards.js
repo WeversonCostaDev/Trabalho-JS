@@ -20,9 +20,17 @@ function exibirCards(pokemonsLista){
     pokemonsLista.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("card");
+        card.innerHTML = `
+        <img src=${pokemon.imagem} alt="${pokemon.nome}">
+        <div class="acoes-card">
+            <button class="editar">Editar</button>
+            <button class="excluir">Excluir</button>
+        </div>
+        `;
+        
         aplicarEfeito(card);
-        card.innerHTML = `<img src=${pokemon.imagem} alt="${pokemon.nome}">`;
         areaCards.appendChild(card);
+
     });
 };
 
@@ -66,4 +74,41 @@ function aplicarEfeito(card) {
         `;
         card.style.setProperty("--brilho", "0");
     });
+
+    card.addEventListener("click", ()=>{
+        card.classList.toggle("selecionado");
+    });
+
+    const botaoEditar = card.querySelector(".editar");
+    const botaoExcluir = card.querySelector(".excluir");
+
+    botaoEditar.addEventListener("click", (event) =>{
+        event.stopPropagation(); //Vai evitar que o evento de click atinja o elementos de camadas abaixo, como o card.
+        const id = card.dataset.id;
+        console.log();
+    });
+
+    botaoExcluir.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const id = card.dataset.id;
+
+        console.log("Excluir:", id);
+    });
+}
+
+
+const form = document.getElementById("barra-pesquisa");
+form.addEventListener("submit", async(event)=>{
+    event.preventDefault();
+    const dados = new FormData(form);
+    const lista = await getPokemonsPorNome(dados.get("nome"));
+    exibirCards(lista);
+});
+
+//Pega um card pelo nome
+function getPokemonsPorNome(nome){
+    const cards = JSON.parse(localStorage.getItem("pokemons")) || [];
+    const card = cards.filter(card => card.nome.toLowerCase() === nome.toLowerCase())
+    return card;
 }

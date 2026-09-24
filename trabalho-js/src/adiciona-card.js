@@ -27,7 +27,8 @@ formulario.addEventListener("submit", async (event) =>{
     const imagem = await lerImagem(dados.get("imagem"));
 
     const pokemon = {
-        nome : dados.get("nome"),
+        id : Date.now(),
+        nome : dados.get("nome").trim(),
         tipo : dados.get("tipo"),
         quantidade : Number(dados.get("quantidade")),
         raridade : dados.get("raridade"),
@@ -36,4 +37,3 @@ formulario.addEventListener("submit", async (event) =>{
     adicionarPokemon(pokemon);
     console.log("lista:", pokemons);
 });
-
