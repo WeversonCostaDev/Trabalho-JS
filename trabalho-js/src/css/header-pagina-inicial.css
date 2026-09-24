@@ -1,8 +1,4 @@
 /*Nesse arquivo, estilizamos os elementos que estão dentro do header.*/
-:root{
-    --x:1px;
-    --y:1px;
-}
 
 #banner-container{
     position: relative;

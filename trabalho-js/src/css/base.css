@@ -3,7 +3,10 @@
 :root {
   --destaque: rgb(255, 206, 46);
   --branco: #fff;
+  --x:1px;
+  --y:1px;
 }
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
