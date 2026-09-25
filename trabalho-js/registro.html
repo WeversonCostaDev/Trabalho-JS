@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt/br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/faixa-superior.css">
+  <link rel="stylesheet" href="/src/css/adiciona-card.css">
+  <link rel="stylesheet" href="/src/css/footer.css" />
+  <link rel="stylesheet" href="/src/css/formulario.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>trabalho-js</title>
+</head>
+
+<body>
+  <div id="app">
+
+    <header id="header">
+      <div id=faixa-superior>
+        <a class="logo" href="index.html">
+          <picture>
+            <img src="/img/tcg-logo.png" alt="logo-de-pokémon-tcg" />
+          </picture>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="adiciona-card.html">Adicionar Card</a></li>
+            <li><a href="cartas.html">Cartas</a></li>
+            <li><a>Pokémons estampas ilustradas live</a></li>
+            <li><a>Como jogar</a></li>
+            <li><a>Novidades</a></li>
+            <li><a href="login.html">Registro/Login</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="faixa-meio">
+        <img id="esquerda" src="/img/cards-esquerda.png" alt="cards pokémons da lateral esquerda">
+            <h1>Registro</h1>
+        <img id="direita" src="/img/cards-direita.png" alt="cards pokémons da lateral direita">
+        <div class="faixa-final">
+        </div>
+      </div>
+
+    </header>
+    <main id="main">
+      <section>
+        <div class="formulario-container">
+          <form action="" id="formulario">
+            <label for="nome">Nome
+              <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+            </label>
+            <label for="email">Email
+              <input type="email" id="email" name="email" placeholder="e-mail">
+            </label>
+            <label for="data-nascimento">Data de nascimento
+              <input type="date" name="data-nascimento" id="data-nascimento">
+            </label>
+            <label for="telefone">Telefone
+              <input type="tel" id="telefone" name="telefone" placeholder="telefone">
+            </label>
+            <label for=""></label>
+            <button type="submit">Adicionar</button>
+            <a href="login.html">já tem cadastro?</a>
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <h2>Meus cards</h2>
+        <div id="lista"></div>
+      </section>
+
+    </main>
+    <footer id="footer">
+      <nav>
+        <ul>
+          <li><a>Suporte</a></li>
+          <li><a>Termos de Uso</a></li>
+          <li><a>Política de Privacidade</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+  <script type="module" src="/src/registro.js"></script>
+</body>
+
+</html>

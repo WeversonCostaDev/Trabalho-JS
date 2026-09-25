@@ -2,7 +2,7 @@
 #container-cards{
     width: 100%;
     background-color: #fff;
-    height: 800px;
+    
     padding: 20px 0;
 }
 #container-cards>div#menu-selecao{
@@ -61,7 +61,7 @@
 #container-cards ul{
     list-style: none;
 }
-#container-cards button{
+#container-cards li button{
     color: black;
     background: #fff;
     width: 100%;
@@ -134,11 +134,11 @@
     width: 100%;
     justify-content: center;
     gap: 10px;
-    opacity: 0;
+    display: none;
 }
 
 .card.selecionado .acoes-card{
-    opacity: 1;
+    display: flex;
 }
 
 .acoes-card button {
@@ -146,4 +146,13 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.acoes-card button{
+    width: 100%;
+    font-weight: 800;
+}
+.acoes-card button.excluir{
+    background-color: red;
+    font-weight: 800;
 }
