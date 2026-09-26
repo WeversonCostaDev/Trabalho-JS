@@ -1,6 +1,7 @@
 if (!localStorage.getItem("usuarios")) {
     localStorage.setItem("usuarios", JSON.stringify([
-        {
+        {   
+            id: 1,
             nome: "Administrador",
             email: "admin@email.com",
             senha: "admin123",
@@ -19,9 +20,6 @@ formulario.addEventListener("submit", (event)=>{
     event.preventDefault();
 
     const dados = new FormData(formulario);
-    console.log("E-mail digitado:", dados.get("email"));
-    console.log("Senha digitada:", dados.get("senha"));
-    console.log("Usuários:", usuarios);
     try{
         const usuario = usuarios.find(usuario => 
             usuario.email === dados.get("email") &&
@@ -32,9 +30,8 @@ formulario.addEventListener("submit", (event)=>{
             throw new Error("E-mail não encontrado, verifique as credenciais ou registre-se");
         }
 
-        //Salva o usuário atual no localStorage
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-
+        //Salva o usuário atual no sessionStorage
+        sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
         if(usuario.perfil === "cliente"){
             window.location.href = "perfil.html";

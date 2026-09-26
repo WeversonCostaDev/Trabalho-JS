@@ -36,15 +36,35 @@
                     <img src="/img/treinador-icone.png" alt="">
                 </picture>
             </div>
+
             <form action="">
             <label for="icone"></label>
             <input type="file" id="icone" name="icone">
             </form>
-            <div>
-                <h3>Nome do treinador</h3>
+
+            <div id="nome-treinador-container">
+                <h3 id="nome-treinador">Nome do treinador</h3>
+            </div>
+
+            <div id="opcoes-perfil">
+                <button id="editar-perfil">Editar</button>
+                <button id="logout">Logout</button>
             </div>
         </div>
-        
+        <section id="editar-container">
+                <h2>Editar Perfil</h2>
+                <form action="">
+                    <label for="nome">Nome 
+                        <input type="text" name="nome" id="nome">
+                    </label>
+                    <label for="email">E-mail
+                        <input type="email" name="email" id="email">
+                    </label><label for="telefone">Telefone
+                        <input type="tel" name="telefone" id="telefone">
+                    </label>
+                    <button type="submite">Atualizar</button>
+                </form>
+            </section>
     </div>
     <script type="module" src="/src/perfil.js"></script>
 </body>

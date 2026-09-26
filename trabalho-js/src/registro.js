@@ -1,8 +1,8 @@
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-
 const formulario = document.getElementById("formulario");
 formulario.addEventListener("submit", (event)=>{
+    event.preventDefault();
     const dados = new FormData(formulario);
     const email = dados.get("email").trim();
 
@@ -20,6 +20,7 @@ formulario.addEventListener("submit", (event)=>{
 
 function cadastro(dados){
     const usuario = {
+        id: Date.now(),
         nome: dados.get("nome").trim(),
         email: dados.get("email").trim(),
         senha: dados.get("senha"),
