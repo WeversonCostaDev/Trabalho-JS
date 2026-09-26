@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/css/base.css">
+    <link rel="stylesheet" href="/src/css/faixa-superior.css">
+    <link rel="stylesheet" href="/src/css/perfil.css">
+</head>
+<body>
+    <div id=faixa-superior>
+        <a class="logo" href="index.html">
+          <picture>
+            <img src="/img/tcg-logo.png" alt="logo-de-pokémon-tcg" />
+          </picture>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="adiciona-card.html">Adicionar Card</a></li>
+            <li><a href="cartas.html">Cartas</a></li>
+            <li><a>Pokémons estampas ilustradas live</a></li>
+            <li><a>Como jogar</a></li>
+            <li><a>Novidades</a></li>
+            <li><a href="login.html">Registro/Login</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <div id="perfil-container">
+        <div>
+            <h1>Perfil do treinador</h1>
+            <div id="icone-container">
+                <picture>
+                    <img src="/img/treinador-icone.png" alt="">
+                </picture>
+            </div>
+            <form action="">
+            <label for="icone"></label>
+            <input type="file" id="icone" name="icone">
+            </form>
+            <div>
+                <h3>Nome do treinador</h3>
+            </div>
+        </div>
+        
+    </div>
+    <script type="module" src="/src/perfil.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 const pokemons = JSON.parse(localStorage.getItem("pokemons")) || [];
 const idPokemonEditando = localStorage.getItem("idPokemonEditando");
 
-function lerImagem(arquivo) {
+export function lerImagem(arquivo) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
 

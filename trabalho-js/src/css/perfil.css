@@ -1,0 +1,33 @@
+#perfil-container{
+    min-height: 100vh;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#perfil-container>div{
+    max-width: 400px;
+    width: 100%;
+    border: 5px solid transparent;
+    text-align: center;
+    padding: 30px;
+    border-radius: 30px;
+    background: 
+        linear-gradient(#fff) padding-box,
+        linear-gradient(135deg,  #b8860b, #fff, #dba10d, #b8860b) border-box;
+    
+}
+
+#icone-container{
+    width: 130px;
+    border-radius: 50%;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+#icone-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
