@@ -16,6 +16,7 @@ formulario.addEventListener("submit", (event)=>{
         return;
     }        
     cadastro(dados);
+    window.location.href = "login.html";
 });
 
 function cadastro(dados){

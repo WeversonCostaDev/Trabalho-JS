@@ -47,15 +47,15 @@ function carregarIcone(){
 
 const editar  = document.getElementById("editar-perfil");
 editar.addEventListener("click", () => {
-    const editarContainer = document.getElementById("editar-container");
-    editarContainer.hidden = false;
+    const formularioContainer = document.querySelector(".formulario-container");
+    formularioContainer.classList.toggle("oculto");
 });
 
-const formularioEdicaoPerfil = document.querySelector("#editar-container>form");
+const formulario = document.querySelector(".formulario-container>form.formulario");
 
-formularioEdicaoPerfil.addEventListener("submit", (event) =>{
+formulario.addEventListener("submit", (event) =>{
     event.preventDefault();
-    const dados = new FormData(formularioEdicaoPerfil);
+    const dados = new FormData(formulario);
 
     const dadosTratados = validaDadosEdicao(dados);
     atualizarPerfil(dadosTratados);
@@ -96,5 +96,15 @@ function atualizarPerfil(dadosTratados){
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     window.location.reload();
 }
+
+const botaoSair = document.getElementById("sair");
+botaoSair.addEventListener("click", ()=>{
+    const decisao = confirm("Deseja mesmo sair?");
+    if(decisao){
+        sessionStorage.removeItem("usuarioLogado");
+        window.location.href="index.html";
+    }
+});
+
 carregarIcone();
 adicionaNomeTreinador();
