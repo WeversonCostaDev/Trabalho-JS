@@ -4,7 +4,7 @@ const idPokemonEditando = localStorage.getItem("idPokemonEditando");
 import { lerImagem } from "./lerImagem";
 
 //CREATE
-function adicionarPokemon(pokemon){
+function adicionarPokemon(pokemon) {
     pokemons.push(pokemon);
 
     localStorage.setItem("pokemons", JSON.stringify(pokemons));
@@ -13,15 +13,15 @@ function adicionarPokemon(pokemon){
 const formulario = document.querySelector("#formulario");
 
 //Preenche os dados no formulário
-if(idPokemonEditando){
+if (idPokemonEditando) {
     const pokemon = procuraPokemonId(idPokemonEditando);
     document.getElementById("nome").value = pokemon.nome;
     document.getElementById("tipo").value = pokemon.tipo;
     document.getElementById("quantidade").value = pokemon.quantidade;
     document.getElementById("raridade").value = pokemon.raridade;
-    }
+}
 
-formulario.addEventListener("submit", async (event) =>{
+formulario.addEventListener("submit", async (event) => {
     event.preventDefault(); // evitar o comportamento padrão de recarregar a página.
 
     const dados = new FormData(formulario);
@@ -32,6 +32,7 @@ formulario.addEventListener("submit", async (event) =>{
 
         pokemon.nome = dados.get("nome").trim();
         pokemon.tipo = dados.get("tipo");
+        pokemon.preco = Number(dados.get("preco"));
         pokemon.quantidade = Number(dados.get("quantidade"));
         pokemon.raridade = dados.get("raridade");
 
@@ -42,15 +43,16 @@ formulario.addEventListener("submit", async (event) =>{
             pokemon.imagem = await lerImagem(arquivo);
         }
     }
-    else{
-        const pokemon = 
+    else {
+        const pokemon =
         {
-        id : Date.now(),
-        nome : dados.get("nome").trim(),
-        tipo : dados.get("tipo"),
-        quantidade : Number(dados.get("quantidade")),
-        raridade : dados.get("raridade"),
-        imagem : await lerImagem(dados.get("imagem")),
+            id: Date.now(),
+            nome: dados.get("nome").trim(),
+            tipo: dados.get("tipo"),
+            preco: dados.get("preco"),
+            quantidade: Number(dados.get("quantidade")),
+            raridade: dados.get("raridade"),
+            imagem: await lerImagem(dados.get("imagem")),
         };
         adicionarPokemon(pokemon);
         console.log("lista:", pokemons);
@@ -60,7 +62,7 @@ formulario.addEventListener("submit", async (event) =>{
     window.location.href = "cartas.html";
 });
 
-function procuraPokemonId(id){
+function procuraPokemonId(id) {
     const pokemon = pokemons.find(pokemon => pokemon.id == Number(id));
     return pokemon;
 }

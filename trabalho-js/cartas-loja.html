@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header id="header">
+    <header id="header" class="padding">
         <div id="faixa-superior">
             <a class="logo" href="index.html">
                 <picture>
@@ -29,15 +29,8 @@
                 </ul>
             </nav>
         </div>
-
-        <div class="faixa-meio">
-
-            <div class="faixa-final">
-                <form action="" id="barra-pesquisa">
-                    <input type="text" name="nome" placeholder="Nome do card">
-                    <button type="submit"><img src="/img/lupa.png" alt=""></button>
-                </form>
-            </div>
+        <div class="video-container">
+            <video src="/vid/video-pokemon-loop.mp4" autoplay loop muted></video>
         </div>
     </header>
 
@@ -75,6 +68,7 @@
     </section>
 
     <script type="module" src="/src/cards-loja.js"></script>
+    <script type="module" src="/src/get-card-type.js"></script>
 </body>
 
 </html>

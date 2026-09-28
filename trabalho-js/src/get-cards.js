@@ -1,121 +1,4 @@
 
-//Adiciona pokemons no localstorage
-if(!localStorage.getItem("pokemons")){localStorage.setItem("pokemons", JSON.stringify([
-    {
-        id: 1,
-        nome: "Chikorita",
-        tipo: "planta",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/chikorita-fullart.png"
-    },
-    {
-        id: 2,
-        nome: "Boubasaur",
-        tipo: "planta",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/bulbasaur-fullart.png"
-    },
-    {
-        id: 3,
-        nome: "Turtwig",
-        tipo: "planta",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/turtwig-fullart.png"
-    },
-    {
-        id: 4,
-        nome: "Laefeon gx",
-        tipo: "planta",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/leafeon-gx-fullart.png"
-    },
-    {
-        id: 5,
-        nome: "Charmander",
-        tipo: "fogo",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/charmander-fullart.png"
-    },
-    {
-        id: 6,
-        nome: "Fennekin",
-        tipo: "fogo",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/fennekin-fullart.png"
-    },
-    {
-        id: 7,
-        nome: "Mega Charizard ex",
-        tipo: "fogo",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/mega-charizard-ex-fullart.png"
-    },
-    {
-        id: 8,
-        nome: "Piplup",
-        tipo: "agua",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/piplup-fullart.png"
-    },
-    {
-        id: 9,
-        nome: "Sobble",
-        tipo: "agua",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/sobble-fullart.png"
-    },
-    {
-        id: 10,
-        nome: "Squirtle",
-        tipo: "agua",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/squirtle-fullart.png"
-    },
-    {
-        id: 11,
-        nome: "Totodile",
-        tipo: "agua",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/totodile-fullart.png"
-    },
-    {
-        id: 12,
-        nome: "Pikachu",
-        tipo: "eletrico",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/pikachu-fullart.png"
-    },
-    {
-        id: 13,
-        nome: "pachirisu",
-        tipo: "eletrico",
-        quantidade: 1,
-        raridade: "raro",
-        imagem: "/img/cards/pachirisu-fullart.png"
-    },
-    {
-        id: 14,
-        nome: "Miraidon ex",
-        tipo: "eletrico",
-        quantidade: 1,
-        raridade: "ultra-raro",
-        imagem: "/img/cards/miraidon-ex-ultrarara.png"
-    },
-]));
-}
-
 //pega lista de cards pokemons do localStorage e converte para objeto js
 const pokemons = JSON.parse(localStorage.getItem("pokemons")) || [];
 const areaCards = document.getElementById("area-cards");
@@ -126,19 +9,19 @@ exibirCards(pokemons);
 //Chama a funcao getTipo que retorna todos os cards daquele tipo de valor do botão
 //Por fim insere os cards retornados na funcao de exibir cards
 const botoes = document.querySelectorAll("#container-cards button");
-botoes.forEach(botao => botao.addEventListener("click", ()=>{
+botoes.forEach(botao => botao.addEventListener("click", () => {
 
     const pokemonsLista = getTipo(botao.value);
     exibirCards(pokemonsLista);
 }));
 
 //Pega o card pokemon de acordo como tipo
-function getTipo(tipo){
+function getTipo(tipo) {
     return pokemons.filter(pokemon => pokemon.tipo === tipo);
 }
 
-function exibirCards(pokemonsLista){
-    areaCards.innerHTML="";
+function exibirCards(pokemonsLista) {
+    areaCards.innerHTML = "";
     pokemonsLista.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -154,7 +37,7 @@ function exibirCards(pokemonsLista){
             <button class="excluir">Excluir</button>
         </div>
         `;
-        
+
         aplicarEfeito(card);
         areaCards.appendChild(card);
 
@@ -202,36 +85,36 @@ function aplicarEfeito(card) {
         card.style.setProperty("--brilho", "0");
     });
 
-    card.addEventListener("click", ()=>{
+    card.addEventListener("click", () => {
         card.classList.toggle("selecionado");
     });
 
     const botaoEditar = card.querySelector(".editar");
     const botaoExcluir = card.querySelector(".excluir");
 
-    botaoEditar.addEventListener("click", (event) =>{
+    botaoEditar.addEventListener("click", (event) => {
         event.stopPropagation(); //Vai evitar que o evento de click atinja o elementos de camadas abaixo, como o card.
         const id = Number(card.dataset.id);
-        
+
         localStorage.setItem("idPokemonEditando", id);
 
         //Redireciona o usuário para essa página.
         window.location.href = "adiciona-card.html";
     });
 
-        botaoExcluir.addEventListener("click", (event) => {
-            event.stopPropagation();
-            const id = Number(card.dataset.id);
-            const novaLista = pokemons.filter(pokemon => pokemon.id != id);
+    botaoExcluir.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const id = Number(card.dataset.id);
+        const novaLista = pokemons.filter(pokemon => pokemon.id != id);
 
-            localStorage.setItem("pokemons", JSON.stringify(novaLista));
-            window.location.reload();
-        });
+        localStorage.setItem("pokemons", JSON.stringify(novaLista));
+        window.location.reload();
+    });
 }
 
 
 const form = document.getElementById("barra-pesquisa");
-form.addEventListener("submit", async(event)=>{
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const dados = new FormData(form);
     const lista = await getPokemonsPorNome(dados.get("nome"));
@@ -239,7 +122,7 @@ form.addEventListener("submit", async(event)=>{
 });
 
 //Pega um card pelo nome
-function getPokemonsPorNome(nome){
+function getPokemonsPorNome(nome) {
     const cards = JSON.parse(localStorage.getItem("pokemons")) || [];
     const card = cards.filter(card => card.nome.toLowerCase() === nome.toLowerCase())
     return card;

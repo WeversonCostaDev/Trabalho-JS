@@ -68,6 +68,9 @@
                 <option value="fada">Fada</option>
               </select>
             </label>
+            <label for="preco">Preço
+              <input type="number" min="0" step="0.01" name="preco" id="preco" placeholder="Preço do card" required>
+            </label>
             <label for="quantidade">Quantidade<br>
               <input type="number" min="1" name="quantidade" id="quantidade" placeholder="Quantidade de unidades"
                 required>
@@ -89,11 +92,6 @@
             <button type="submit">Adicionar</button>
           </form>
         </div>
-      </section>
-
-      <section>
-        <h2>Meus cards</h2>
-        <div id="lista"></div>
       </section>
 
     </main>

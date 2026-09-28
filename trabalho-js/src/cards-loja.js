@@ -34,8 +34,6 @@ function exibirCards(pokemonsLista) {
     });
 };
 
-
-
 function controleDeQuantidade(card, pokemon) {
     let quantidade = 1;
     const botaoDiminuir = card.querySelector(".diminuir");
@@ -53,6 +51,23 @@ function controleDeQuantidade(card, pokemon) {
             spanQuantidade.textContent = quantidade;
         }
     });
+}
+
+
+const botoes = document.querySelectorAll("#container-cards button");
+
+//Adiciona a cada botao de tipo o evento de click
+//Chama a funcao getTipo que retorna todos os cards daquele tipo de valor do botão
+//Por fim insere os cards retornados na funcao de exibir cards
+botoes.forEach(botao => botao.addEventListener("click", () => {
+
+    const pokemonsLista = getTipo(botao.value);
+    exibirCards(pokemonsLista);
+}));
+
+//Pega o card pokemon de acordo como tipo
+function getTipo(tipo) {
+    return pokemons.filter(pokemon => pokemon.tipo === tipo);
 }
 
 exibirCards(pokemons);
