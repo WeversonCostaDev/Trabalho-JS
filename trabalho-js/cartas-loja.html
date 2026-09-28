@@ -5,13 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/src/css/base.css" />
+    <link rel="stylesheet" href="/src/css/faixa-superior.css">
     <link rel="stylesheet" href="/src/css/cartas-loja.css">
+    <link rel="stylesheet" href="/src/css/comum-cards.css" />
 </head>
 
 <body>
+    <header id="header">
+        <div id="faixa-superior">
+            <a class="logo" href="index.html">
+                <picture>
+                    <img src="/img/tcg-logo.png" alt="logo-de-pokémon-tcg" />
+                </picture>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="adiciona-card.html">Adicionar Card</a></li>
+                    <li><a href="cartas.html">Cartas</a></li>
+                    <li><a>Pokémons estampas ilustradas live</a></li>
+                    <li><a>Como jogar</a></li>
+                    <li><a>Novidades</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <div id="area-cards">
-    </div>
+        <div class="faixa-meio">
+
+            <div class="faixa-final">
+                <form action="" id="barra-pesquisa">
+                    <input type="text" name="nome" placeholder="Nome do card">
+                    <button type="submit"><img src="/img/lupa.png" alt=""></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div id="container-cards">
+            <div id="menu-selecao">
+                <details>
+                    <summary>
+                        <h3>Tipos<h3>
+                    </summary>
+                    <ul>
+                        <li><button type="button" value="normal">Normal</button></li>
+                        <li><button type="button" value="eletrico">Elétrico</button></li>
+                        <li><button type="button" value="fogo">Fogo</button></li>
+                        <li><button type="button" value="agua">Água</button></li>
+                        <li><button type="button" value="planta">Planta</button></li>
+                        <li><button type="button" value="gelo">Gelo</button></li>
+                        <li><button type="button" value="lutador">Lutador</button></li>
+                        <li><button type="button" value="veneno">Veneno</button></li>
+                        <li><button type="button" value="terra">Terra</button></li>
+                        <li><button type="button" value="rocha">Rocha</button></li>
+                        <li><button type="button" value="inseto">Inseto</button></li>
+                        <li><button type="button" value="fantasma">Fantasma</button></li>
+                        <li><button type="button" value="psiquico">Psíquico</button></li>
+                        <li><button type="button" value="dragap">Dragão</button></li>
+                        <li><button type="button" value="fada">Fada</button></li>
+                    </ul>
+                </details>
+            </div>
+
+            <div id="area-cards">
+
+            </div>
+        </div>
+    </section>
 
     <script type="module" src="/src/cards-loja.js"></script>
 </body>
