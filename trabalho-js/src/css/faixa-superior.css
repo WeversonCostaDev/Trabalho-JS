@@ -19,6 +19,7 @@
     list-style: none;
     gap: 10px;
     flex-wrap: wrap;
+    align-items: center;
 
 }
 
@@ -44,4 +45,18 @@
 .logo:hover{
     transform: scale(1.1);
     transition: transform 0.1s ease-in;
+}
+
+#carrinho{
+    position: relative;
+}
+#carrinho>div{
+    width: fit-content;
+    position: absolute;
+    border-radius: 50%;
+    top: 12px;
+    right: 21px;
+}
+#carrinho #contador{
+    color: #fff;
 }
