@@ -12,6 +12,11 @@ if (!localStorage.getItem("usuarios")) {
         }
     ]));
 }
+const mensagemLogin = sessionStorage.getItem("mensagemLogin");
+if(mensagemLogin){
+    alert(mensagemLogin);
+    sessionStorage.removeItem("mensagemLogin");
+}
 
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 

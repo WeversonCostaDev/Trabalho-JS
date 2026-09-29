@@ -41,57 +41,58 @@
 
     </header>
     <main id="main">
-      <section>
-        <div class="formulario-container">
-          <form action="" id="formulario">
-            <label for="nome">Nome
-              <input type="text" name="nome" id="nome" placeholder="Nome do card" required>
-            </label>
-            <label for="tipo">Tipo
-              <select name="tipo" id="tipo">
-                <option value="normal">Normal</option>
-                <option value="eletrico">Elétrico</option>
-                <option value="fogo">Fogo</option>
-                <option value="agua">Água</option>
-                <option value="planta">Planta</option>
-                <option value="gelo">Gelo</option>
-                <option value="lutador">Lutador</option>
-                <option value="veneno">Veneno</option>
-                <option value="terra">Terra</option>
-                <option value="rocha">Rocha</option>
-                <option value="inseto">Inseto</option>
-                <option value="fantasma">Fantasma</option>
-                <option value="psiquico">Psíquico</option>
-                <option value="dragao">Dragão</option>
-                <option value="fada">Fada</option>
-              </select>
-            </label>
-            <label for="preco">Preço
-              <input type="number" min="0" step="0.01" name="preco" id="preco" placeholder="Preço do card" required>
-            </label>
-            <label for="quantidade">Quantidade<br>
-              <input type="number" min="1" name="quantidade" id="quantidade" placeholder="Quantidade de unidades"
-                required>
-            </label>
-            <label for="raridade">Raridade
-              <select name="raridade" id="raridade">
-                <option value="comum">Comum</option>
-                <option value="incomum">Incomum</option>
-                <option value="raro">Raro</option>
-                <option value="raro">duplamente raro</option>
-                <option value="super raro">Super raro</option>
-                <option value="imersivo">Imersivo</option>
-                <option value="ultra-raro">Ultra raro</option>
-              </select>
-            </label>
-            <label for="imagem">Imagem
-              <input type="file" name="imagem" id="imagem" accept=" .jpg, .jpeg, .png, .webp">
-            </label>
-            <button type="submit">Adicionar</button>
-          </form>
-        </div>
-      </section>
-
+      <div class="conteudo-centralizado">
+        <section>
+          <div class="formulario-container">
+            <form action="" id="formulario">
+              <label for="nome">Nome
+                <input type="text" name="nome" id="nome" placeholder="Nome do card" required>
+              </label>
+              <label for="tipo">Tipo
+                <select name="tipo" id="tipo">
+                  <option value="normal">Normal</option>
+                  <option value="eletrico">Elétrico</option>
+                  <option value="fogo">Fogo</option>
+                  <option value="agua">Água</option>
+                  <option value="planta">Planta</option>
+                  <option value="gelo">Gelo</option>
+                  <option value="lutador">Lutador</option>
+                  <option value="veneno">Veneno</option>
+                  <option value="terra">Terra</option>
+                  <option value="rocha">Rocha</option>
+                  <option value="inseto">Inseto</option>
+                  <option value="fantasma">Fantasma</option>
+                  <option value="psiquico">Psíquico</option>
+                  <option value="dragao">Dragão</option>
+                  <option value="fada">Fada</option>
+                </select>
+              </label>
+              <label for="preco">Preço
+                <input type="number" min="0" step="0.01" name="preco" id="preco" placeholder="Preço do card" required>
+              </label>
+              <label for="quantidade">Quantidade<br>
+                <input type="number" min="1" name="quantidade" id="quantidade" placeholder="Quantidade de unidades"
+                  required>
+              </label>
+              <label for="raridade">Raridade
+                <select name="raridade" id="raridade">
+                  <option value="comum">Comum</option>
+                  <option value="incomum">Incomum</option>
+                  <option value="raro">Raro</option>
+                  <option value="raro">duplamente raro</option>
+                  <option value="super raro">Super raro</option>
+                  <option value="imersivo">Imersivo</option>
+                  <option value="ultra-raro">Ultra raro</option>
+                </select>
+              </label>
+              <label for="imagem">Imagem
+                <input type="file" name="imagem" id="imagem" accept=" .jpg, .jpeg, .png, .webp">
+              </label>
+              <button type="submit">Adicionar</button>
+            </form>
+          </div>
+        </section>
+      </div>
     </main>
     <footer id="footer">
       <nav>
@@ -102,9 +103,9 @@
         </ul>
       </nav>
     </footer>
-    <script type="module" src="/src/adiciona-card.js"></script>
+    <script typep="module" src="src/js/verifica-admin.js"></script>
+    <script type="module" src="/src/js/adiciona-card.js"></script>
   </div>
-
 
 </body>
 

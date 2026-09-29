@@ -24,9 +24,6 @@
         </a>
         <nav>
           <ul>
-            <li><a>Pokémons estampas ilustradas live</a></li>
-            <li><a>Como jogar</a></li>
-            <li><a>Novidades</a></li>
             <li><a href="cartas-loja.html">Cards da loja</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="perfil.html">Perfil</a></li>
@@ -44,35 +41,32 @@
 
     </header>
     <main id="main">
-      <section>
-        <div class="formulario-container">
-          <form action="" id="formulario">
-            <label for="nome">Nome
-              <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
-            </label>
-            <label for="email">Email
-              <input type="email" id="email" name="email" placeholder="e-mail" required>
-            </label>
-            <label for="senha">Senha
-              <input type="password" id="senha" name="senha" required>
-            </label>
-            <label for="data-nascimento">Data de nascimento
-              <input type="date" name="data-nascimento" id="data-nascimento" required>
-            </label>
-            <label for="telefone">Telefone
-              <input type="tel" id="telefone" name="telefone" placeholder="telefone">
-            </label>
-            <label for=""></label>
-            <button type="submit">Adicionar</button>
-            <a href="login.html">já tem cadastro?</a>
-          </form>
-        </div>
-      </section>
-
-      <section>
-        <h2>Meus cards</h2>
-        <div id="lista"></div>
-      </section>
+      <div class="conteudo-centralizado">
+        <section>
+          <div class="formulario-container">
+            <form action="" id="formulario">
+              <label for="nome">Nome
+                <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+              </label>
+              <label for="email">Email
+                <input type="email" id="email" name="email" placeholder="e-mail" required>
+              </label>
+              <label for="senha">Senha
+                <input type="password" id="senha" name="senha" required>
+              </label>
+              <label for="data-nascimento">Data de nascimento
+                <input type="date" name="data-nascimento" id="data-nascimento" required>
+              </label>
+              <label for="telefone">Telefone
+                <input type="tel" id="telefone" name="telefone" placeholder="telefone">
+              </label>
+              <label for=""></label>
+              <button type="submit">Adicionar</button>
+              <a href="login.html">já tem cadastro?</a>
+            </form>
+          </div>
+        </section>
+      </div>
 
     </main>
     <footer id="footer">
@@ -85,7 +79,7 @@
       </nav>
     </footer>
   </div>
-  <script type="module" src="/src/registro.js"></script>
+  <script type="module" src="/src/js/registro.js"></script>
 </body>
 
 </html>

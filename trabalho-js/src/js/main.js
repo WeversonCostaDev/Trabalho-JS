@@ -57,7 +57,7 @@ if (!localStorage.getItem("pokemons")) {
         },
         {
             id: 7,
-            nome: "Mega Charizard ex",
+            nome: "Mega Charizard",
             tipo: "fogo",
             preco: 1,
             quantidade: 5,

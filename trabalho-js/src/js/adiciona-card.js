@@ -17,6 +17,7 @@ if (idPokemonEditando) {
     const pokemon = procuraPokemonId(idPokemonEditando);
     document.getElementById("nome").value = pokemon.nome;
     document.getElementById("tipo").value = pokemon.tipo;
+    document.getElementById("preco").value = pokemon.preco;
     document.getElementById("quantidade").value = pokemon.quantidade;
     document.getElementById("raridade").value = pokemon.raridade;
 }
@@ -55,7 +56,6 @@ formulario.addEventListener("submit", async (event) => {
             imagem: await lerImagem(dados.get("imagem")),
         };
         adicionarPokemon(pokemon);
-        console.log("lista:", pokemons);
     }
     localStorage.setItem("pokemons", JSON.stringify(pokemons));
     localStorage.removeItem("idPokemonEditando");

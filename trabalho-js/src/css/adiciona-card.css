@@ -13,6 +13,7 @@
     left: 0px;
     bottom: 0;
     max-width: 400px;
+    width: 100%;
 }
 
 .faixa-meio>img#direita{
@@ -20,6 +21,7 @@
     right: 0px;
     bottom: 0;
     max-width: 400px;
+    width: 100%;
 }
 .faixa-meio h1{
     font-weight: 800;
@@ -35,4 +37,24 @@
     justify-content: flex-end;
     align-items: center;
     
+}
+
+@media (max-width: 920px) {
+
+    .faixa-meio {
+        height: 350px;
+    }
+
+    .faixa-meio > img#esquerda,
+    .faixa-meio > img#direita {
+        display: none;
+    }
+
+    .faixa-meio h1 {
+        font-size: 2em;
+    }
+
+    .faixa-final {
+        height: 70px;
+    }
 }

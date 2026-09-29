@@ -1,7 +1,16 @@
+
+//Pega todos os usuários.
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
 //Pega usuário logado.
 const usuarioLogado = JSON.parse(sessionStorage.getItem("usuarioLogado"));
+
+//Verifica se o usuário está logado para acessar a página de perfil.
+
+if(!usuarioLogado){
+    sessionStorage.setItem("mensagemLogin", "Faça login para acessar seu perfil.");
+    window.location.href = "login.html";
+}
 
 import { lerImagem } from "./lerImagem";
 
@@ -105,6 +114,7 @@ botaoSair.addEventListener("click", ()=>{
         window.location.href="index.html";
     }
 });
+
 
 carregarIcone();
 adicionaNomeTreinador();
