@@ -63,3 +63,13 @@ p {
 
 }
 
+.faixa-final{
+    background: #fff;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}

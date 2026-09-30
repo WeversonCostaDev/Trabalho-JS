@@ -1,17 +1,37 @@
+#carrinho-container{
+    width: 90%;
+    margin: 0 auto;
 
+}
 
 #area-cards{
     border: 1px solid green;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     border-radius: 15px;
     min-height: 300px;
 }
 
 #infos-container{
     border: 1px solid green;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    margin-top: 20px;
     border-radius: 15px;
-    margin-top: 10px;
+    padding: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
 }
+
+#infos-container>p{
+    font-weight: bold;
+}
+
+#infos-container>button{
+    background-color: olivedrab;
+    padding: 10px;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 15px;
+}
+

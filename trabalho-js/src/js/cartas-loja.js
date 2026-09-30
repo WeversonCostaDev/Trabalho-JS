@@ -1,7 +1,8 @@
 const areaCards = document.querySelector("#area-cards");
 const pokemons = JSON.parse(localStorage.getItem("pokemons")) || [];
 const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-let carrinhoContador = Number(localStorage.getItem("carrinhoContador")) || 0;
+
+import { atualizarContadorCarrinho } from "./atualizaCarrinho";
 
 function exibirCards(pokemonsLista) {
     areaCards.innerHTML = "";
@@ -35,10 +36,6 @@ function exibirCards(pokemonsLista) {
     });
 };
 
-function exibirContadorCarrinho(){
-    const divContador = document.getElementById("contador");
-    divContador.textContent = carrinhoContador;
-}
 
 function controleDeQuantidade(card, pokemon) {
     let quantidade = 1;
@@ -61,15 +58,18 @@ function controleDeQuantidade(card, pokemon) {
 
 function adicionaNoCarrinho(card, pokemonCard){
     const botaoCarrinho = card.querySelector("button.adicionar-carrinho");
+
     botaoCarrinho.addEventListener("click", ()=>{
         const spanQuantidade = card.querySelector("span.quantidade");
         const quantidade = Number(spanQuantidade.textContent);
 
-        const itemCarrinho = carrinho.find(item => item.id === pokemonCard.id);
+        const itemCarrinho = carrinho.find(
+            item => item.id === pokemonCard.id);
         
         if(itemCarrinho){
             
             const novaQuantidade = itemCarrinho.quantidade + quantidade;
+
             if(novaQuantidade > pokemonCard.quantidade){
                 alert("Você não pode adicionar mais unidades do que o estoque disponível.");
                 return;
@@ -85,9 +85,7 @@ function adicionaNoCarrinho(card, pokemonCard){
 
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-        carrinhoContador = quantidade+carrinhoContador;
-        localStorage.setItem("carrinhoContador", JSON.stringify(carrinhoContador));
-        exibirContadorCarrinho();
+        atualizarContadorCarrinho();
     });
 }
 
@@ -107,5 +105,6 @@ function getTipo(tipo) {
     return pokemons.filter(pokemon => pokemon.tipo === tipo);
 }
 
+
 exibirCards(pokemons);
-exibirContadorCarrinho();
+atualizarContadorCarrinho();

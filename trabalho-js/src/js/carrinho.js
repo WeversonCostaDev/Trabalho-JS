@@ -1,9 +1,8 @@
 const itensCarrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 const areaCards = document.getElementById("area-cards");
-const infoContainer = document.getElementById("infos-container");
+const valorTotal = document.querySelector("#infos-container>p");
 
-let carrinhoContador = Number(localStorage.getItem("carrinhoContador"));
-import { exibirContadorCarrinho } from "./exibe-contador-carrinho";
+import { atualizarContadorCarrinho } from "./atualizaCarrinho";
 
 function exibirItens(){
     if(itensCarrinho.length === 0){
@@ -20,9 +19,7 @@ function exibirItens(){
         total += (item.preco * item.quantidade);
     });
 
-    const valorTotal = document.createElement("p");
     valorTotal.textContent = `Valor total R$: ${total.toFixed(2)}`;
-    infoContainer.appendChild(valorTotal);
 }
 function exibirItem(item){
     const card = document.createElement("div");
@@ -49,14 +46,23 @@ function exibirItem(item){
 
 function botaoLixeira(card, pokemon){
     const botao = card.querySelector("div.lixeira button");
+
     botao.addEventListener("click", ()=>{
-        const novaLista = itensCarrinho.filter(pokemonLista => pokemonLista.id != pokemon.id);
-        localStorage.setItem("carrinho",JSON.stringify(novaLista));
+
+        const novaLista = itensCarrinho.filter(
+            pokemonLista => pokemonLista.id != pokemon.id
+        );
+
+        localStorage.setItem(
+            "carrinho",
+            JSON.stringify(novaLista)
+        );
+
         location.reload();
-        carrinhoContador -= pokemon.quantidade;
-        localStorage.setItem("carrinhoContador", carrinhoContador);
     }); 
    
 }
+
+
 exibirItens();
-exibirContadorCarrinho();
+atualizarContadorCarrinho();
