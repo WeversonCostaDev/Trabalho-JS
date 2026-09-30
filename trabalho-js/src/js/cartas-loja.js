@@ -68,6 +68,7 @@ function adicionaNoCarrinho(card, pokemonCard){
         const itemCarrinho = carrinho.find(item => item.id === pokemonCard.id);
         
         if(itemCarrinho){
+            
             const novaQuantidade = itemCarrinho.quantidade + quantidade;
             if(novaQuantidade > pokemonCard.quantidade){
                 alert("Você não pode adicionar mais unidades do que o estoque disponível.");

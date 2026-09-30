@@ -12,6 +12,7 @@ if(!usuarioLogado){
     window.location.href = "login.html";
 }
 
+import { exibirContadorCarrinho } from "./exibe-contador-carrinho";
 import { lerImagem } from "./lerImagem";
 
 const inputArquivo = document.getElementById("icone");
@@ -118,3 +119,4 @@ botaoSair.addEventListener("click", ()=>{
 
 carregarIcone();
 adicionaNomeTreinador();
+exibirContadorCarrinho();

@@ -1,5 +1,5 @@
 .card {
-    border: 1px solid red;
+    border: 1px solid black;
     background-color: #fff;
     padding: 10px;
 }
@@ -63,6 +63,3 @@ p {
 
 }
 
-.padding {
-    padding-top: 90px;
-}

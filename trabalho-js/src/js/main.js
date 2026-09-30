@@ -129,7 +129,7 @@ if (!localStorage.getItem("pokemons")) {
         },
     ]));
 }
-
+import { exibirContadorCarrinho } from "./exibe-contador-carrinho";
 
 const card = document.querySelector(".card");
 const brilho = document.querySelector(".brilho");
@@ -210,3 +210,5 @@ botaoEsquerdo.addEventListener("click", () => {
     imagem.setAttribute("src", cards[indice].imagem);
     titulo.textContent = cards[indice].titulo
 })
+
+exibirContadorCarrinho();

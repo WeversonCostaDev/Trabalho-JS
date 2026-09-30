@@ -1,0 +1,9 @@
+
+
+#area-cards{
+   border: 1px solid green;
+   width: 90%;
+   margin: 0 auto;
+   border-radius: 15px;
+   min-height: 500px;
+}
