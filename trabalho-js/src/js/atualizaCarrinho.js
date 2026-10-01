@@ -8,5 +8,7 @@ export function atualizarContadorCarrinho() {
         0
     );
 
-    divContador.textContent = total;
+    if (divContador) {
+        divContador.textContent = total;
+    }
 }

@@ -1,5 +1,4 @@
-
-import { exibirContadorCarrinho } from "./exibe-contador-carrinho";  
+import {atualizarContadorCarrinho} from "./atualizaCarrinho";
 import { lerImagem } from "./lerImagem";
 
 //Pega todos os usuários.
@@ -124,3 +123,4 @@ botaoSair.addEventListener("click", ()=>{
 
 carregarIcone();
 adicionaNomeTreinador();
+atualizarContadorCarrinho();

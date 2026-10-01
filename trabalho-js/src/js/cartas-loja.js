@@ -104,6 +104,20 @@ botoes.forEach(botao => botao.addEventListener("click", () => {
 function getTipo(tipo) {
     return pokemons.filter(pokemon => pokemon.tipo === tipo);
 }
+const form = document.getElementById("barra-pesquisa");
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const dados = new FormData(form);
+    const lista = await getPokemonsPorNome(dados.get("nome"));
+    exibirCards(lista);
+});
+
+//Pega um card pelo nome
+function getPokemonsPorNome(nome) {
+    const cards = JSON.parse(localStorage.getItem("pokemons")) || [];
+    const card = cards.filter(card => card.nome.toLowerCase() === nome.toLowerCase())
+    return card;
+}
 
 
 exibirCards(pokemons);
