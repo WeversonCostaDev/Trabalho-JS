@@ -1,4 +1,7 @@
 
+import { exibirContadorCarrinho } from "./exibe-contador-carrinho";  
+import { lerImagem } from "./lerImagem";
+
 //Pega todos os usuários.
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
@@ -12,8 +15,10 @@ if(!usuarioLogado){
     window.location.href = "login.html";
 }
 
-import { exibirContadorCarrinho } from "./exibe-contador-carrinho";
-import { lerImagem } from "./lerImagem";
+if (document.querySelector("#contador-carrinho")) {
+
+    exibirContadorCarrinho();
+} 
 
 const inputArquivo = document.getElementById("icone");
 
@@ -34,10 +39,10 @@ function atualizaIcone(imagem){
     const usuarioLista = usuarios.find(usuario => usuario.id === usuarioLogado.id);
     
     //Muda icone do usuário da lista
-    usuarioLista.imagem = imagem;
+    usuarioLista.icone = imagem;
 
     //Muda icone do uduário logado
-    usuarioLogado.imagem = imagem;
+    usuarioLogado.icone = imagem;
 
     //Atualiza a lista de usuários logados
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -50,8 +55,8 @@ function atualizaIcone(imagem){
 
 function carregarIcone(){
     const imagem = document.querySelector("#icone-container img");  
-    if(usuarioLogado.imagem){
-        imagem.setAttribute("src", usuarioLogado.imagem);
+    if(usuarioLogado.icone){
+        imagem.setAttribute("src", usuarioLogado.icone);
     }
 }
 
@@ -119,4 +124,3 @@ botaoSair.addEventListener("click", ()=>{
 
 carregarIcone();
 adicionaNomeTreinador();
-exibirContadorCarrinho();

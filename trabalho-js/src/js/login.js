@@ -8,7 +8,7 @@ if (!localStorage.getItem("usuarios")) {
             dataNascimento: "2000-01-01",
             telefone: "",
             perfil: "admin",
-            icone: "/img/treinador-icone.png"
+            icone: "/img/icone-adm.png"
         }
     ]));
 }
@@ -42,7 +42,7 @@ formulario.addEventListener("submit", (event) => {
             window.location.href = "perfil.html";
             return;
         }
-        window.location.href = "cartas.html";
+        window.location.href = "perfil-adm.html";
     }
     catch (erro) {
         alert(erro.message);
