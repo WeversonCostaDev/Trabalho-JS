@@ -1,3 +1,6 @@
+
+import { atualizarContadorCarrinho } from "./atualizaCarrinho";
+
 //Adiciona pokemons no localstorage
 if (!localStorage.getItem("pokemons")) {
     localStorage.setItem("pokemons", JSON.stringify([
@@ -129,7 +132,6 @@ if (!localStorage.getItem("pokemons")) {
         },
     ]));
 }
-import { exibirContadorCarrinho } from "./exibe-contador-carrinho";
 
 const card = document.querySelector(".card");
 const brilho = document.querySelector(".brilho");
@@ -211,4 +213,4 @@ botaoEsquerdo.addEventListener("click", () => {
     titulo.textContent = cards[indice].titulo
 })
 
-exibirContadorCarrinho();
+atualizarContadorCarrinho();
